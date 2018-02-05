@@ -1,0 +1,4 @@
+name: Jenkins
+description: Customised Jenkins CI
+version: 2.92-rancher1
+category: Continuous Integration
