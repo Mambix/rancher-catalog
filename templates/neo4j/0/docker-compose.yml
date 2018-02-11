@@ -1,0 +1,20 @@
+version: '2'
+services:
+  neo4j:
+    image: neo4j
+    environment:
+      NEO4J_dbms_memory_pagecache_size: 16G
+      NEO4J_dbms_memory_heap_max__size: 16G
+      NEO4J_dbms_txLog_rotation_retention__policy: 128M
+      NEO4J_dbms_tx__log_rotation_size: 16M
+      NEO4J_dbms_memory_heap_initial__size: 16G
+    stdin_open: true
+    network_mode: host
+    volumes:
+    - /home/rancher/neo4j/data:/data
+    tty: true
+    ports:
+    - 7474:7474/tcp
+    - 7687:7687/tcp
+    labels:
+      io.rancher.container.pull_image: always

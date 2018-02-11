@@ -1,0 +1,16 @@
+version: '2'
+services:
+  redis:
+    image: bitnami/redis:latest
+    environment:
+      ALLOW_EMPTY_PASSWORD: 'no'
+      REDIS_PASSWORD: ${PASSWORD}
+      REDIS_MAXMEMORY_POLICY: allkeys-lru
+      REDIS_MAXMEMORY: 4G
+    stdin_open: true
+    network_mode: host
+    tty: true
+    ports:
+    - ${PORT}:6379/tcp
+    labels:
+      io.rancher.container.pull_image: always

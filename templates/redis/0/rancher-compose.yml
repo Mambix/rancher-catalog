@@ -1,0 +1,23 @@
+version: '2'
+services:
+  redis:
+    scale: 1
+    start_on_create: true
+.catalog:
+  name: Redis
+  version: Redis [allkeys-lru]
+  description: |
+    Redis database with allkeys-lru policy
+  questions:
+  - variable: "PORT"
+    type: "int"
+    label: "Port Number"
+    description: "Which port should Redis listen on?"
+    default: 6379
+    required: true
+  - variable: "PASSWORD"
+    description: "Set password to limit access to your Redis database!!!"
+    label: "Password:"
+    required: true
+    default: "ChangeMe!!!"
+    type: "string"

@@ -1,0 +1,4 @@
+name: Redis
+description: Customised Redis instalation
+version: latest
+category: Databases
